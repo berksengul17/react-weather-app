@@ -27,8 +27,12 @@ function WeatherContainer() {
 							src={`https://openweathermap.org/img/wn/${day.weather[0].icon}@4x.png`}
 						/>
 						<div className='temp'>
-							<span>{`${Math.round(day.main.temp_min)}°`}</span>
-							<span>{`${Math.round(day.main.temp_max)}°`}</span>
+							<span>
+								Min:{`${Math.round(day.main.temp_min)}°`}
+							</span>
+							<span>
+								Max:{`${Math.round(day.main.temp_max)}°`}
+							</span>
 						</div>
 					</div>
 				);
