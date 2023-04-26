@@ -2,7 +2,7 @@ import { getCityNames } from "turkey-neighbourhoods";
 import { useLocation } from "../context/LocationContext";
 
 function CitySelector() {
-	const { location, setLocation } = useLocation();
+	const { setLocation } = useLocation();
 	const cityContainer = [];
 
 	getCityNames().forEach((city, index) => {
@@ -14,7 +14,7 @@ function CitySelector() {
 	});
 
 	return (
-		<div>
+		<div className='city-selector'>
 			<select
 				name='cities'
 				id='cities'
@@ -26,7 +26,6 @@ function CitySelector() {
 				{cityContainer}
 			</select>
 			<br />
-			Current location - {location}
 		</div>
 	);
 }
