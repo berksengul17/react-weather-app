@@ -9,8 +9,9 @@ export const WeatherProvider = ({ children }) => {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		const API = "5a4eba316221300c155e8cc66841c0bb";
-		const URL = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&exclude=current,minutely,hourly,alerts&units=metric&lang=en&appid=${API}&cnt=40`;
+		const API = process.env.REACT_APP_API_KEY;
+		const URL = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&
+		exclude=current,minutely,hourly,alerts&units=metric&lang=en&appid=${API}&cnt=40`;
 		fetch(URL)
 			.then((response) => response.json())
 			.then((data) => {
