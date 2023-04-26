@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import CitySelector from "./components/CitySelector";
+import WeatherContainer from "./components/WeatherContainer";
+import Footer from "./components/Footer";
+import { LocationProvider } from "./context/LocationContext";
+import { WeatherProvider } from "./context/WeatherContext";
+
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<LocationProvider>
+			<WeatherProvider>
+				<h1>WEATHER APP</h1>
+				<CitySelector />
+				<WeatherContainer />
+				<Footer />
+			</WeatherProvider>
+		</LocationProvider>
+	);
 }
 
 export default App;
